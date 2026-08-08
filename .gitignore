@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+venv/
+.venv/
+data/extracted/*.json
+uploads/*
+!uploads/.gitkeep
+!uploads/sample_contract_for_testing.pdf
+.DS_Store

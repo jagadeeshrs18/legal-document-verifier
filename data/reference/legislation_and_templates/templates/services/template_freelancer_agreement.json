@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "category": "templates",
+    "subcategory": "services",
+    "doc_type": "template",
+    "filename": "template_freelancer_agreement",
+    "filepath": "data\\raw\\templates\\services\\template_freelancer_agreement.pdf"
+  },
+  "total_pages": 2,
+  "total_tables": 2,
+  "pages": [
+    {
+      "page_number": 1,
+      "text": "On Letterhead of the Company \n \nPage 1 of 2 \n \nFREELANCE AGREEMENT \nThis Freelance Agreement is made at {Enter City, State} and effective this 1st Day of January, 2016 \n \nBETWEEN: \n…………………………………  Ltd. (the \"Client\"), a Private Limited Company/Partnership Firm \nregistered in India having its registered office at: …………………………………  , India. \n\u0001 the Party to the First part  \n \nAND: \nM/s..…………………………………………… \n(the \n\"Freelancer\") \na \nPrivate \nLimited \nCompany/Partnership Firm registered in India having its registered office at: \n…………………………………  , India. \n\u0001 the Party to the Second part \n(Collectively referred to as ‘’Parties’’) \n \nThe following terms and conditions are agreed upon by both parties: \n1) Assignment/Project: This Agreement covers following assignments/ projects to be carried by the \nFreelancer: \n{Details of the assignment/project to be carried by Freelancer for Client} \n \n2) Contract Period: Freelancer and Client agree that this Agreement shall begin on the date listed above, \nand continue until the assignment/project is completed, or until terminated by either party.  \n \n3) Compensation: Client agrees to pay Amount of Rs.......... (Rupees ------------------------------- only) per \nHour, Day, Week, Month, year, or a flat fee to Freelancer, and will release the payment on Weekly \nBasis, Monthly Basis, Completion of job, etc. Freelancer will submit an invoice to Client on Weekly \nBasis, Monthly Basis, Completion of job, etc. \n \n4) Financial Obligation: Freelancer agrees that he/she/it is an independent contractor, and not an \nemployee of Client Company/LLP. Freelancer therefore agrees that he/she/it is responsible for \nreporting he/she/it own income to the appropriate authorities. \n \n5) Relationship: Freelancer and Client stipulate that this Agreement does not imply any other \nrelationship between the Client and Freelancer, and that any additional relationship desired by either \nparty must be outlined in a Separate Agreement. \n \n6) Owner: The Client will have sole ownership of the assignment/project work mentioned herein above \nin Clause and rights to publish the work.  \n \n7) Non Disclosure: The Freelancer should not disclose the details of the Client or the Assignment/Work \nunless required and approved by the Client in writing. Company can combine this agreement with \nSeparate NDA",
+      "char_count": 2320
+    },
+    {
+      "page_number": 2,
+      "text": "On Letterhead of the Company \n \nPage 2 of 2 \n \n \n8) Termination: The Client/ Freelancer may terminate this contract on mutual consent and in writing \nand on reasonable, just & fair grounds which are not detrimental to the interests of the Company/ \nFreelancer.  \n \n9) Arbitration/Conciliation: In case of any dispute under this agreement, the Courts of City/District, \nState, Country will have jurisdiction for Arbitration/ Conciliation.  \n \nThis Agreement has been executed on the date set forth herein in two (2) copies of which the Parties have \ntaken one each. \n \nFor Client, \n \n \n \n \n \n \nFor Freelancer, \n{Enter M/s. FULL COMPANY NAME} \n \n \n \nEnter M/s. FULL COMPANY NAME} \n \n \n \n__________________ \n \n \n \n \n \n__________________ \n \n \n………………………………… \n \n \n \n \n \n………………………………… \nManaging Director/ Director/ CEO  \n \n \n \nManaging Director/ Director/ CEO \n/Partner/Proprietor \n \n \n \n \n \nPartner/ Proprietor \n \n \nPlace: ......................... \nDate: DD/MM/YYYY",
+      "char_count": 960
+    }
+  ],
+  "tables": [
+    {
+      "page_number": 2,
+      "table_index": 0,
+      "text": "…………………………………\nManaging Director/ Director/ CEO\n/Partner/Proprietor",
+      "type": "table"
+    },
+    {
+      "page_number": 2,
+      "table_index": 1,
+      "text": "…………………………………\nManaging Director/ Director/ CEO\nPartner/ Proprietor",
+      "type": "table"
+    }
+  ],
+  "total_chars": 3280
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Legal Document Verifier</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="container">
+    <h1>Legal Document Verifier</h1>
+    <p class="subtitle">Upload a contract (PDF, DOCX, or scanned image) to extract its text.</p>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="flashes">
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data" class="upload-form">
+      <input type="file" name="document" accept=".pdf,.docx,.png,.jpg,.jpeg,.tiff,.bmp" required />
+      <button type="submit">Extract Text</button>
+    </form>
+
+    <p class="hint">Supported formats: PDF (digital or scanned), DOCX, PNG/JPG images.</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Extraction Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="container">
+    <h1>Extraction Result</h1>
+
+    <table class="meta-table">
+      <tr><th>File</th><td>{{ result.filename }}</td></tr>
+      <tr><th>Type</th><td>{{ result.file_type }}</td></tr>
+      <tr><th>Scanned (OCR used)</th><td>{{ result.is_scanned }}</td></tr>
+      <tr><th>Characters extracted</th><td>{{ result.total_chars }}</td></tr>
+      {% if result.total_pages %}
+        <tr><th>Pages</th><td>{{ result.total_pages }}</td></tr>
+      {% endif %}
+      <tr><th>Saved JSON</th><td>data/extracted/{{ json_name }}</td></tr>
+    </table>
+
+    <h2>Extracted Text</h2>
+    <pre class="extracted-text">{{ result.full_text }}</pre>
+
+    <a href="{{ url_for('index') }}" class="back-link">&larr; Upload another document</a>
+  </div>
+</body>
+</html>
