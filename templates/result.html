@@ -20,7 +20,38 @@
       <tr><th>Saved JSON</th><td>data/extracted/{{ json_name }}</td></tr>
     </table>
 
-    <h2>Extracted Text</h2>
+    {% if result.clauses %}
+      <h2>Clauses ({{ result.total_clauses }})</h2>
+      {% if not result.retrieval_enabled %}
+        <p class="hint">Clause-to-law matching is disabled (vector database not found). Run vectorization/embed_dataset.py to enable it.</p>
+      {% endif %}
+      <div class="clause-list">
+        {% for clause in result.clauses %}
+          <div class="clause">
+            <div class="clause-header">
+              Clause {{ clause.clause_id }}
+              {% if clause.clause_number %} &middot; {{ clause.clause_number }}{% endif %}
+            </div>
+            <pre class="clause-text">{{ clause.text }}</pre>
+
+            {% if clause.law_matches %}
+              <div class="law-matches">
+                <div class="law-matches-header">Related Indian law / template provisions:</div>
+                {% for match in clause.law_matches %}
+                  <div class="law-match">
+                    <span class="law-match-source">{{ match.source_document }} (p.{{ match.page }})</span>
+                    <span class="law-match-relevance">{{ match.relevance_pct }}% relevant</span>
+                    <div class="law-match-excerpt">{{ match.excerpt[:200] }}...</div>
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <h2>Full Extracted Text</h2>
     <pre class="extracted-text">{{ result.full_text }}</pre>
 
     <a href="{{ url_for('index') }}" class="back-link">&larr; Upload another document</a>
