@@ -66,3 +66,72 @@ button:hover { background: #1d2840; }
 }
 
 .back-link { display: inline-block; margin-top: 16px; color: #2b3a55; }
+
+.clause-list {
+  max-height: 500px;
+  overflow-y: auto;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  margin-bottom: 24px;
+}
+
+.clause {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+.clause:last-child { border-bottom: none; }
+
+.clause-header {
+  font-weight: 600;
+  font-size: 0.85em;
+  color: #2b3a55;
+  margin-bottom: 4px;
+}
+
+.clause-text {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 0.85em;
+  margin: 0;
+  color: #333;
+}
+
+.law-matches {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed #ddd;
+}
+
+.law-matches-header {
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 6px;
+}
+
+.law-match {
+  background: #eef1f7;
+  border-radius: 5px;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  font-size: 0.8em;
+}
+
+.law-match-source {
+  font-weight: 600;
+  color: #2b3a55;
+}
+
+.law-match-relevance {
+  float: right;
+  color: #2b7a4b;
+  font-weight: 600;
+}
+
+.law-match-excerpt {
+  clear: both;
+  color: #555;
+  margin-top: 4px;
+}

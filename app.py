@@ -14,6 +14,17 @@ import uuid
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 
 from extraction.extractor import extract_text, is_supported
+from segmentation.clause_segmenter import segment_clauses
+
+try:
+    from retrieval.clause_retriever import ClauseRetriever
+    _retriever = ClauseRetriever()
+    RETRIEVAL_ENABLED = True
+except Exception as e:
+    print(f"[warning] Clause-to-law retrieval disabled: {e}")
+    print("          (Run vectorization/embed_dataset.py first to enable it.)")
+    _retriever = None
+    RETRIEVAL_ENABLED = False
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 UPLOAD_FOLDER = os.path.join(BASE_DIR, "uploads")
@@ -63,8 +74,18 @@ def upload():
         flash(f"Extraction failed: {e}")
         return redirect(url_for("index"))
 
-    # Persist the extracted result as JSON (useful for the next
-    # pipeline stage: clause segmentation / NLP classification)
+    # Split the extracted text into individual clauses
+    result["clauses"] = segment_clauses(result.get("full_text", ""))
+    result["total_clauses"] = len(result["clauses"])
+
+    # For each clause, find the most relevant matching Indian law /
+    # template provisions from the vectorized reference dataset
+    if RETRIEVAL_ENABLED:
+        result["clauses"] = _retriever.attach_matches(result["clauses"])
+    result["retrieval_enabled"] = RETRIEVAL_ENABLED
+
+    # Persist the extracted + segmented result as JSON (useful for the
+    # next pipeline stage: NLP clause classification / risk scoring)
     json_name = f"{unique_id}.json"
     with open(os.path.join(EXTRACTED_FOLDER, json_name), "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
